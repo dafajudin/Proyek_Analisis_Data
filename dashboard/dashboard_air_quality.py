@@ -2,14 +2,13 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import seaborn as sns
-import requests
 import matplotlib.pyplot as plt
-from io import StringIO
 
 st.set_page_config (
     page_title='Air Quality Dashboard',
     page_icon=':bar_chart:',
 )
+
 #judul data dashboard
 st.title('Air Quality in district Changpi')
 
