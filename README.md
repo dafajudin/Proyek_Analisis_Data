@@ -13,4 +13,3 @@ python -m streamlit run name_file.py
 ```
 
 ### Streamlit cloud
-https://rizalajisantoso1.streamlit.app/
