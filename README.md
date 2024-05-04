@@ -13,3 +13,4 @@ python -m streamlit run name_file.py
 ```
 
 ### Streamlit cloud
+https://dafajudin.streamlit.app/
