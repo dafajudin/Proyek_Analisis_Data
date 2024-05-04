@@ -13,7 +13,7 @@ st.set_page_config (
 st.title('Air Quality in district Changpi')
 
 def load_data():
-    df = pd.read_csv('air_quality_changpi.csv')
+    df = pd.read_csv('dashboard/air_quality_changpi.csv')
     return df
 
 # Main function
