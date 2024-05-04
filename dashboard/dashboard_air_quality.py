@@ -10,12 +10,10 @@ st.set_page_config (
     page_title='Air Quality Dashboard',
     page_icon=':bar_chart:',
 )
-
 #judul data dashboard
 st.title('Air Quality in district Changpi')
 
 def load_data():
-    # Ganti 'nama_file.csv' dengan nama file yang sesuai
     df = pd.read_csv('air_quality_changpi.csv')
     return df
 
@@ -28,7 +26,7 @@ def main():
     option = st.sidebar.selectbox('Pilih Pertanyaan',
                                 [
                                     'Hubungan Polutan dengan Waktu',
-                                    'Distribusi Polutan di Distrik Changpi',
+                                    'Distribusi Polutan di Distrik Chanpi',
                                     'Tren Curah Hujan di Distrik Shunyi'
                                 ])
 
@@ -37,9 +35,9 @@ def main():
         st.subheader('Hubungan Polutan dengan Waktu')
         st.write("Dalam pengembangan.")
 
-    # Pertanyaan 2: Distribusi Polutan di Distrik Changpi
-    elif option == 'Distribusi Polutan di Distrik Changpi':
-        st.subheader('Distribusi Polutan di Distrik Changpi')
+    # Pertanyaan 2: Distribusi Polutan di Distrik Chanpi
+    elif option == 'Distribusi Polutan di Distrik Chanpi':
+        st.subheader('Distribusi Polutan di Distrik Chanpi')
         # Membuat histogram untuk distribusi polutan PM10, SO2, dan NO2
         plt.figure(figsize=(12, 6))
 
@@ -56,22 +54,21 @@ def main():
         plt.title('Distribusi NO2')
         plt.xlabel('Konsentrasi NO2')
         plt.tight_layout()
-
-        # Menampilkan plot menggunakan Streamlit
         st.pyplot(plt)
 
-    # Pertanyaan 3: Tren Curah Hujan di Distrik Changpi
-    elif option == 'Tren Curah Hujan di Distrik Changpi':
-        st.subheader('Tren Curah Hujan di Distrik Changpi')
+    # Pertanyaan 3: Tren Curah Hujan di Distrik Shunyi
+    elif option == 'Tren Curah Hujan di Distrik Shunyi':
+        st.subheader('Tren Curah Hujan di Distrik Shunyi')
+
+        # Membuat line plot untuk tren curah hujan
         plt.figure(figsize=(12, 6))
+
         sns.lineplot(x='year', y='RAIN', data=df)
         plt.title('Tren Curah Hujan di Distrik Changpi')
         plt.xlabel('Tahun')
         plt.ylabel('Curah Hujan (mm)')
         plt.grid(True)
         plt.xticks(df['year'].unique().astype(int))
-
-        # Menampilkan plot menggunakan Streamlit
         st.pyplot(plt)
 
 # Menjalankan main function
